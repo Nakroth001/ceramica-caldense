@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171614">
+
+<title>Produtos | Cerâmica Caldense</title>
+<meta name="description" content="Conheça os tijolos e produtos cerâmicos da Cerâmica Caldense e solicite seu orçamento.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark:#171614;
+  --brick:#a94f32;
+  --brick2:#c46a45;
+  --cream:#f3eee7;
+  --white:#fff;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+button,input { font-family:inherit; }
+
+.container {
+  width:min(1160px,90%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header {
+  height:86px;
+  background:var(--dark);
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+}
+
+.logo-symbol {
+  width:38px;
+  height:38px;
+}
+
+.logo-symbol img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.logo strong {
+  display:block;
+  font-size:17px;
+  letter-spacing:1px;
+}
+
+.logo small {
+  color:#b6ada4;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.back-link {
+  color:#ddd5cd;
+  font-size:13px;
+  transition:.3s;
+}
+
+.back-link:hover { color:var(--brick2); }
+
+/* PAGE INTRO */
+
+.page-intro {
+  background:var(--dark);
+  color:white;
+  padding:85px 0 95px;
+  text-align:center;
+}
+
+.page-intro .label {
+  color:var(--brick2);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  margin-bottom:20px;
+}
+
+.page-intro h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(35px,5vw,55px);
+  line-height:1.2;
+  margin-bottom:18px;
+}
+
+.page-intro h1 span { color:#d17a54; }
+
+.page-intro p {
+  max-width:570px;
+  margin:auto;
+  color:#c6bdb5;
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* CATALOG */
+
+.catalog {
+  padding:75px 0;
+}
+
+.catalog-header {
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 45px;
+}
+
+.section-label {
+  color:var(--brick);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.catalog-header h2 {
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.catalog-header p {
+  color:#77716a;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.catalog-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.catalog-card {
+  background:white;
+  overflow:hidden;
+  border-radius:4px;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  transition:.3s;
+}
+
+.catalog-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,.10);
+}
+
+.catalog-card img {
+  width:100%;
+  height:215px;
+  object-fit:cover;
+  display:block;
+}
+
+.catalog-info { padding:24px; }
+
+.category {
+  color:var(--brick);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.catalog-info h3 {
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  margin:12px 0;
+}
+
+.catalog-info p {
+  color:#888;
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:17px;
+}
+
+.catalog-price {
+  font-size:22px;
+  font-weight:700;
+  color:var(--brick);
+  margin-bottom:18px;
+}
+
+.catalog-price small {
+  font-size:11px;
+  color:#888;
+  font-weight:400;
+}
+
+.quantity {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:18px;
+  font-size:13px;
+}
+
+.quantity input {
+  width:85px;
+  padding:11px;
+  border:1px solid #ddd;
+  border-radius:3px;
+  font-size:14px;
+  outline:none;
+}
+
+.quantity input:focus {
+  border-color:var(--brick);
+}
+
+.add-cart {
+  width:100%;
+  padding:15px;
+  background:var(--brick);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.add-cart:hover { background:#803a25; }
+
+/* CART */
+
+.cart-box {
+  background:#25211e;
+  color:white;
+  padding:35px;
+  margin-top:55px;
+  border-radius:5px;
+}
+
+.cart-box h3 {
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  margin-bottom:20px;
+}
+
+.empty-cart {
+  color:#aaa;
+  font-size:13px;
+  padding:10px 0;
+}
+
+.cart-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:17px 0;
+  border-bottom:1px solid #494039;
+  font-size:13px;
+}
+
+.cart-item-info {
+  flex:1;
+}
+
+.cart-item-info small {
+  display:block;
+  color:#aaa;
+  margin-top:5px;
+}
+
+.cart-item strong {
+  white-space:nowrap;
+}
+
+.remove-item {
+  color:#ff8b70;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:23px;
+  padding:5px;
+}
+
+.cart-total {
+  display:flex;
+  justify-content:space-between;
+  font-size:19px;
+  font-weight:700;
+  margin:25px 0;
+}
+
+.finish-order {
+  width:100%;
+  padding:17px;
+  background:#20bd65;
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  border-radius:3px;
+  transition:.3s;
+}
+
+.finish-order:hover { background:#159b50; }
+
+.demo-notice {
+  text-align:center;
+  color:#a94f32;
+  font-size:11px;
+  margin-top:22px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+
+footer {
+  background:#12110f;
+  color:white;
+  padding:35px 0;
+  text-align:center;
+}
+
+footer p {
+  color:#aaa29a;
+  font-size:12px;
+  line-height:1.8;
+}
+
+.footer-back {
+  display:inline-block;
+  margin-top:15px;
+  color:var(--brick2);
+  font-size:12px;
+  font-weight:700;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:58px;
+  height:58px;
+  background:#20bd65;
+  color:white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  z-index:99;
+  box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .catalog-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:560px) {
+  .catalog {
+    padding:55px 0;
+  }
+
+  .catalog-grid {
+    grid-template-columns:1fr;
+  }
+
+  .catalog-header h2 { font-size:29px; }
+
+  .page-intro {
+    padding:70px 0;
+  }
+
+  .cart-box { padding:23px 18px; }
+
+  .cart-item {
+    flex-wrap:wrap;
+  }
+
+  .logo strong { font-size:14px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      <div class="logo-symbol">
+        <img src="logo.png" alt="Cerâmica Caldense">
+      </div>
+
+      <div>
+        <strong>CERÂMICA CALDENSE</strong>
+        <small>Qualidade que constrói</small>
+      </div>
+    </a>
+
+    <a href="index.html" class="back-link">← Voltar ao início</a>
+
+  </div>
+</header>
+
+<!-- INTRODUÇÃO -->
+
+<section class="page-intro">
+  <div class="container">
+
+    <div class="label">CATÁLOGO CALDENSE</div>
+
+    <h1>
+      Nossos <span>produtos.</span>
+    </h1>
+
+    <p>
+      Conheça nossa linha de produtos cerâmicos.
+      Escolha os produtos, informe as quantidades
+      e solicite seu orçamento diretamente pelo WhatsApp.
+    </p>
+
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+
+<main class="catalog">
+
+  <div class="container">
+
+    <div class="catalog-header">
+      <div class="section-label">LINHA DE PRODUTOS</div>
+
+      <h2>Encontre o material ideal para sua obra.</h2>
+
+      <p>
+        Confira nossos produtos e adicione ao carrinho
+        para montar sua solicitação de orçamento.
+      </p>
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid"></div>
+
+    <!-- CARRINHO -->
+
+    <div class="cart-box">
+
+      <h3>Seu carrinho</h3>
+
+      <div id="cartItems">
+        <p class="empty-cart">Seu carrinho está vazio.</p>
+      </div>
+
+      <div class="cart-total">
+        <span>Total estimado:</span>
+        <span id="cartTotal">R$ 0,00</span>
+      </div>
+
+      <button class="finish-order" onclick="finishOrder()">
+        FINALIZAR PEDIDO PELO WHATSAPP →
+      </button>
+
+    </div>
+
+    <p class="demo-notice">
+      * Valores ilustrativos para demonstração.
+      Consulte a empresa para confirmar preços,
+      disponibilidade, frete e condições de pagamento.
+    </p>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      © 2026 Cerâmica Caldense. Todos os direitos reservados.
+      <br>
+      Engenheiro Caldas - MG
+    </p>
+
+    <a href="index.html" class="footer-back">
+      ← VOLTAR AO SITE PRINCIPAL
+    </a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a class="whatsapp"
+   href="https://wa.me/553399635918"
+   target="_blank"
+   rel="noopener"
+   aria-label="Fale pelo WhatsApp">
+
+  <svg width="29" height="29" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.4.1 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.9 1.5h.1c6.6 0 12-5.4 12-12a12 12 0 0 0-3.7-8.4ZM12.1 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12.1 22Zm5.5-7.5c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.3-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.2-.2.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.4s1.1 2.7 1.2 2.9c.1.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
+  </svg>
+</a>
+
+<script>
+
+// PRODUTOS CALDENSE
+
+const products = [
+  {
+    id:1,
+    name:"Tijolo 10",
+    category:"Tijolo cerâmico",
+    price:1200
+  },
+  {
+    id:2,
+    name:"Tijolo 11",
+    category:"Tijolo cerâmico",
+    price:1350
+  },
+  {
+    id:3,
+    name:"Tijolo 15",
+    category:"Tijolo cerâmico",
+    price:1650
+  },
+  {
+    id:4,
+    name:"Laje",
+    category:"Linha de laje",
+    price:1400
+  },
+  {
+    id:5,
+    name:"Meio tijolo 10",
+    category:"Meio tijolo",
+    price:850
+  },
+  {
+    id:6,
+    name:"Meio tijolo 11",
+    category:"Meio tijolo",
+    price:950
+  },
+  {
+    id:7,
+    name:"Meio tijolo 15",
+    category:"Meio tijolo",
+    price:1100
+  }
+];
+
+let cart = [];
+
+const formatPrice = value =>
+  value.toLocaleString("pt-BR", {
+    style:"currency",
+    currency:"BRL"
+  });
+
+// MOSTRAR PRODUTOS
+
+function renderProducts() {
+
+  const grid = document.getElementById("catalogGrid");
+
+  grid.innerHTML = products.map(product => `
+
+    <article class="catalog-card">
+
+      <img
+        src="tijolosceramicos.png"
+        alt="${product.name}"
+        onerror="this.onerror=null;this.src='Abase.png';"
+      >
+
+      <div class="catalog-info">
+
+        <span class="category">
+          ${product.category}
+        </span>
+
+        <h3>${product.name}</h3>
+
+        <p>
+          Produto cerâmico para sua construção.
+        </p>
+
+        <div class="catalog-price">
+          ${formatPrice(product.price)}
+          <small>/ milheiro</small>
+        </div>
+
+        <div class="quantity">
+
+          <label for="qty-${product.id}">
+            Quantidade (milheiros):
+          </label>
+
+          <input
+            type="number"
+            id="qty-${product.id}"
+            value="1"
+            min="1"
+            step="1"
+          >
+
+        </div>
+
+        <button
+          class="add-cart"
+          onclick="addToCart(${product.id})"
+        >
+          ADICIONAR AO CARRINHO
+        </button>
+
+      </div>
+
+    </article>
+
+  `).join("");
+}
+
+// ADICIONAR AO CARRINHO
+
+function addToCart(id) {
+
+  const product = products.find(p => p.id === id);
+
+  const quantity = Number(
+    document.getElementById(`qty-${id}`).value
+  );
+
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    alert("Informe uma quantidade válida.");
+    return;
+  }
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+
+    existing.quantity += quantity;
+
+  } else {
+
+    cart.push({
+      ...product,
+      quantity
+    });
+
+  }
+
+  renderCart();
+
+  alert("Produto adicionado ao carrinho!");
+}
+
+// ATUALIZAR CARRINHO
+
+function renderCart() {
+
+  const items = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+
+    items.innerHTML = `
+      <p class="empty-cart">
+        Seu carrinho está vazio.
+      </p>
+    `;
+
+  } else {
+
+    items.innerHTML = cart.map(item => `
+
+      <div class="cart-item">
+
+        <div class="cart-item-info">
+
+          <strong>${item.name}</strong>
+
+          <small>
+            ${item.quantity} milheiro(s)
+          </small>
+
+        </div>
+
+        <strong>
+          ${formatPrice(item.price * item.quantity)}
+        </strong>
+
+        <button
+          class="remove-item"
+          onclick="removeItem(${item.id})"
+          aria-label="Remover ${item.name}"
+        >
+          ×
+        </button>
+
+      </div>
+
+    `).join("");
+
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  document.getElementById("cartTotal").textContent =
+    formatPrice(total);
+}
+
+// REMOVER PRODUTO
+
+function removeItem(id) {
+
+  cart = cart.filter(item => item.id !== id);
+
+  renderCart();
+}
+
+// FINALIZAR PELO WHATSAPP
+
+function finishOrder() {
+
+  if (cart.length === 0) {
+    alert("Adicione produtos ao carrinho primeiro.");
+    return;
+  }
+
+  const phone = "553399635918";
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  let message =
+    "Olá! Gostaria de solicitar um orçamento na Cerâmica Caldense:\n\n";
+
+  cart.forEach(item => {
+
+    message +=
+      `• ${item.name}\n` +
+      `Quantidade: ${item.quantity} milheiro(s)\n` +
+      `Valor estimado: ${formatPrice(item.price * item.quantity)}\n\n`;
+
+  });
+
+  message += `Total estimado: ${formatPrice(total)}\n\n`;
+
+  message +=
+    "Gostaria de confirmar disponibilidade, frete e condições de pagamento.";
+
+  const url =
+    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+
+}
+
+// INICIAR CATÁLOGO
+
+renderProducts();
+renderCart();
+
+</script>
+
+</body>
+</html>
