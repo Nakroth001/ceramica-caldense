@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171614">
+
+<title>Cerâmica Caldense | Qualidade em Tijolos</title>
+
+<meta name="description" content="Cerâmica Caldense. Qualidade, resistência e compromisso na fabricação de produtos cerâmicos para sua construção.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #171614;
+  --dark2: #211e1a;
+  --brick: #a94f32;
+  --brick2: #c46a45;
+  --cream: #f3eee7;
+  --muted: #aaa39a;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  height: 86px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.logo-symbol {
+  width: 43px;
+  height: 43px;
+  background: var(--brick);
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.logo strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.logo small {
+  color: #b6ada4;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: #ddd5cd;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: var(--brick2);
+}
+
+.nav-button {
+  background: var(--brick);
+  padding: 13px 19px;
+  border-radius: 3px;
+  color: white !important;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 700px;
+  height: 90vh;
+  max-height: 850px;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(20,18,16,.96) 0%, rgba(20,18,16,.82) 43%, rgba(20,18,16,.20) 100%),
+    url('https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+
+.hero-content {
+  padding-top: 70px;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--brick2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background: var(--brick2);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(43px, 6vw, 76px);
+  line-height: 1.09;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #d17a54;
+}
+
+.hero p {
+  max-width: 510px;
+  color: #d0c8c0;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 25px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: var(--brick);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--brick2);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.5);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--dark);
+}
+
+/* INFO STRIP */
+
+.info-strip {
+  background: var(--brick);
+  color: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.info-item {
+  padding: 26px 20px;
+  border-right: 1px solid rgba(255,255,255,.2);
+}
+
+.info-item:last-child {
+  border: none;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.info-item span {
+  font-size: 12px;
+  color: #f1d5c8;
+}
+
+/* ABOUT */
+
+section {
+  padding: 105px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  min-height: 470px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--brick);
+  color: white;
+  padding: 25px 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+.section-label {
+  color: var(--brick);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px,4vw,47px);
+  line-height: 1.2;
+  margin-bottom: 23px;
+}
+
+.section-text {
+  color: #77716a;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  margin-top: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+.about-list div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.check {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  background: #eadbd1;
+  color: var(--brick);
+  border-radius: 50%;
+}
+
+/* PRODUCTS */
+
+.products {
+  background: #e9e1d7;
+}
+
+.center-heading {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 50px;
+}
+
+.center-heading .section-title {
+  margin-bottom: 15px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.product-card {
+  background: white;
+  overflow: hidden;
+  transition: .3s;
+  border-radius: 3px;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.10);
+}
+
+.product-card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 27px;
+}
+
+.product-number {
+  color: var(--brick);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.product-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.product-info p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #77716a;
+  margin-bottom: 20px;
+}
+
+.product-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brick);
+}
+
+/* DIFFERENTIALS */
+
+.differentials {
+  background: var(--dark);
+  color: white;
+}
+
+.differentials .section-title {
+  color: white;
+}
+
+.differentials .section-text {
+  color: #b5aca3;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 45px;
+  margin-top: 55px;
+}
+
+.diff-item {
+  border-top: 1px solid #4a4038;
+  padding-top: 28px;
+}
+
+.diff-icon {
+  font-size: 29px;
+  color: var(--brick2);
+  margin-bottom: 20px;
+}
+
+.diff-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin-bottom: 13px;
+}
+
+.diff-item p {
+  color: #aaa29a;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: 210px 210px;
+  gap: 14px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.gallery-grid img:first-child {
+  grid-row: span 2;
+}
+
+/* CTA */
+
+.cta {
+  background:
+    linear-gradient(rgba(87,39,25,.88),rgba(87,39,25,.88)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85') center/cover;
+  color: white;
+  text-align: center;
+}
+
+.cta .section-title {
+  max-width: 650px;
+  margin: 0 auto 20px;
+}
+
+.cta p {
+  color: #ead8cf;
+  max-width: 530px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.cta .btn {
+  background: white;
+  color: var(--brick);
+}
+
+/* FOOTER */
+
+footer {
+  background: #12110f;
+  color: white;
+  padding: 65px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 45px;
+}
+
+footer p {
+  color: #aaa29a;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 340px;
+}
+
+footer h4 {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 13px;
+  color: #aaa29a;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: var(--brick2);
+}
+
+.copyright {
+  border-top: 1px solid #302c27;
+  padding-top: 23px;
+  color: #77716a;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 58px;
+  height: 58px;
+  background: #20bd65;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  z-index: 99;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+  transition: .3s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 86px;
+    left: 0;
+    width: 100%;
+    background: var(--dark);
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    min-height: 680px;
+    background-position: 60% center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .diff-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:560px) {
+  section {
+    padding: 75px 0;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 680px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    padding: 18px 5px;
+  }
+
+  .products-grid,
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    height: 340px;
+  }
+
+  .image-caption {
+    right: -5px;
+    font-size: 17px;
+    padding: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-row: span 2;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .copyright {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      <div class="logo-symbol">C</div>
+      <div>
+        <strong>CERÂMICA CALDENSE</strong>
+        <small>Qualidade que constrói</small>
+      </div>
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio" onclick="closeMenu()">Início</a>
+      <a href="#sobre" onclick="closeMenu()">A Cerâmica</a>
+      <a href="#produtos" onclick="closeMenu()">Produtos</a>
+      <a href="#diferenciais" onclick="closeMenu()">Diferenciais</a>
+      <a href="#contato" class="nav-button" onclick="closeMenu()">Entre em contato</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow">Cerâmica Caldense</div>
+
+      <h1>
+        Construindo o futuro com a <span>força da tradição.</span>
+      </h1>
+
+      <p>
+        Qualidade e resistência em produtos cerâmicos para quem
+        constrói com confiança. Conheça a Cerâmica Caldense.
+      </p>
+
+      <div class="buttons">
+        <a href="#produtos" class="btn btn-primary">Conheça nossos produtos →</a>
+        <a href="#sobre" class="btn btn-outline">Saiba mais</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+
+<div class="info-strip">
+  <div class="container info-grid">
+
+    <div class="info-item">
+      <strong>Qualidade na fabricação</strong>
+      <span>Compromisso com cada produto.</span>
+    </div>
+
+    <div class="info-item">
+      <strong>Resistência e confiança</strong>
+      <span>Materiais para sua construção.</span>
+    </div>
+
+    <div class="info-item">
+      <strong>Atendimento próximo</strong>
+      <span>Estamos prontos para atender você.</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="sobre">
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=1000&q=85" alt="Tijolos cerâmicos">
+      <div class="image-caption">Feito para construir.</div>
+    </div>
+
+    <div>
+      <div class="section-label">Sobre a empresa</div>
+
+      <h2 class="section-title">
+        A base de grandes construções começa aqui.
+      </h2>
+
+      <p class="section-text">
+        A Cerâmica Caldense atua na fabricação de produtos cerâmicos,
+        oferecendo materiais destinados a obras e projetos de construção.
+      </p>
+
+      <p class="section-text">
+        Nosso compromisso é entregar produtos com qualidade,
+        atenção aos processos de fabricação e respeito aos clientes
+        que confiam em nosso trabalho.
+      </p>
+
+      <div class="about-list">
+        <div><span class="check">✓</span> Compromisso com a qualidade</div>
+        <div><span class="check">✓</span> Atenção em cada etapa da produção</div>
+        <div><span class="check">✓</span> Respeito aos nossos clientes</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="produtos">
+  <div class="container">
+
+    <div class="center-heading">
+      <div class="section-label">Nossos produtos</div>
+      <h2 class="section-title">Soluções para construir com confiança.</h2>
+      <p class="section-text">
+        Conheça nossa linha de produtos cerâmicos e consulte
+        as opções disponíveis para sua obra.
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=800&q=85" alt="Tijolos cerâmicos">
+        <div class="product-info">
+          <span class="product-number">01 / LINHA CERÂMICA</span>
+          <h3>Tijolos cerâmicos</h3>
+          <p>
+            Produtos cerâmicos para diferentes necessidades
+            e etapas da construção.
+          </p>
+          <a href="#contato" class="product-link">SOLICITAR INFORMAÇÕES →</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85" alt="Materiais para construção">
+        <div class="product-info">
+          <span class="product-number">02 / CONSTRUÇÃO</span>
+          <h3>Materiais para sua obra</h3>
+          <p>
+            Consulte nossa disponibilidade e conheça
+            as opções de produtos para seu projeto.
+          </p>
+          <a href="#contato" class="product-link">CONSULTAR DISPONIBILIDADE →</a>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?auto=format&fit=crop&w=800&q=85" alt="Produção de cerâmica">
+        <div class="product-info">
+          <span class="product-number">03 / ATENDIMENTO</span>
+          <h3>Orçamentos</h3>
+          <p>
+            Entre em contato com nossa equipe e
+            solicite informações para sua construção.
+          </p>
+          <a href="#contato" class="product-link">FALE CONOSCO →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+
+<section class="differentials" id="diferenciais">
+  <div class="container">
+
+    <div class="section-label">Nossos compromissos</div>
+
+    <h2 class="section-title">
+      Mais que produtos,<br>compromisso com sua construção.
+    </h2>
+
+    <p class="section-text">
+      Trabalhamos para oferecer uma experiência de atendimento
+      que acompanha a importância de cada projeto.
+    </p>
+
+    <div class="diff-grid">
+
+      <div class="diff-item">
+        <div class="diff-icon">◇</div>
+        <h3>Qualidade</h3>
+        <p>Dedicação aos processos de fabricação e atenção à qualidade dos produtos.</p>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">▧</div>
+        <h3>Produção</h3>
+        <p>Trabalho voltado à fabricação de materiais cerâmicos para construção.</p>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">↗</div>
+        <h3>Compromisso</h3>
+        <p>Relacionamento próximo e atendimento dedicado a cada cliente.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section>
+  <div class="container">
+
+    <div class="center-heading">
+      <div class="section-label">Nosso universo</div>
+      <h2 class="section-title">Da cerâmica para a sua construção.</h2>
+      <p class="section-text">
+        Conheça um pouco do universo da produção cerâmica.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=900&q=85" alt="Tijolos">
+      <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=700&q=85" alt="Material cerâmico">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=85" alt="Construção">
+      <img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?auto=format&fit=crop&w=700&q=85" alt="Cerâmica">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=85" alt="Trabalho na construção">
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="cta" id="contato">
+  <div class="container">
+
+    <div class="section-label" style="color:#f0b18e">
+      Fale com a gente
+    </div>
+
+    <h2 class="section-title">
+      Sua próxima construção começa com uma boa escolha.
+    </h2>
+
+    <p>
+      Entre em contato com a Cerâmica Caldense.
+      Nossa equipe está pronta para fornecer informações
+      sobre nossos produtos e atendimento.
+    </p>
+
+    <a href="https://wa.me/5533999999999" target="_blank" class="btn">
+      Solicitar orçamento pelo WhatsApp →
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="logo">
+          <div class="logo-symbol">C</div>
+          <div>
+            <strong>CERÂMICA CALDENSE</strong>
+            <small>Qualidade que constrói</small>
+          </div>
+        </a>
+
+        <p>
+          Cerâmica Caldense. Produtos cerâmicos e compromisso
+          com quem constrói.
+        </p>
+      </div>
+
+      <div>
+        <h4>NAVEGAÇÃO</h4>
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">A empresa</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#diferenciais">Diferenciais</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>CONTATO</h4>
+        <div class="footer-links">
+          <a href="#contato">Solicitar orçamento</a>
+          <a href="https://wa.me/5533999999999" target="_blank">WhatsApp</a>
+          <span>Engenheiro Caldas - MG</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 Cerâmica Caldense. Todos os direitos reservados.</span>
+      <span>Desenvolvido com dedicação.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a class="whatsapp"
+   href="https://wa.me/5533999999999"
+   target="_blank"
+   aria-label="Fale pelo WhatsApp">
+  <svg width="29" height="29" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.4.1 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.9 1.5h.1c6.6 0 12-5.4 12-12a12 12 0 0 0-3.7-8.4ZM12.1 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12.1 22Zm5.5-7.5c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.3-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.2-.2.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.4s1.1 2.7 1.2 2.9c.1.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
+  </svg>
+</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
