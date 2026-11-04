@@ -692,6 +692,194 @@ footer h4 {
     flex-direction: column;
   }
 }
+  /* ===== CATÁLOGO CALDENSE ===== */
+
+.catalog {
+  background: #f3eee7;
+  padding: 85px 5%;
+}
+
+.catalog-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+.catalog-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #252525;
+  margin: 15px 0;
+}
+
+.catalog-header p {
+  color: #777;
+  line-height: 1.7;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.catalog-card {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.catalog-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.catalog-info {
+  padding: 23px;
+}
+
+.catalog-info .category {
+  color: #a94f32;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.catalog-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin: 12px 0;
+  color: #292929;
+}
+
+.catalog-info p {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 17px;
+}
+
+.catalog-price {
+  font-size: 21px;
+  font-weight: bold;
+  color: #a94f32;
+  margin-bottom: 18px;
+}
+
+.catalog-price small {
+  font-size: 11px;
+  color: #888;
+  font-weight: normal;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.quantity input {
+  width: 75px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.add-cart {
+  width: 100%;
+  padding: 14px;
+  background: #a94f32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.add-cart:hover {
+  background: #803a25;
+}
+
+.cart-box {
+  background: #25211e;
+  color: white;
+  padding: 30px;
+  margin-top: 45px;
+  border-radius: 5px;
+}
+
+.cart-box h3 {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 0;
+  border-bottom: 1px solid #494039;
+  font-size: 13px;
+}
+
+.remove-item {
+  color: #ff8b70;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.finish-order {
+  width: 100%;
+  padding: 17px;
+  background: #20bd65;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.finish-order:hover {
+  background: #159b50;
+}
+
+.demo-notice {
+  text-align: center;
+  color: #a94f32;
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+@media(max-width: 800px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 520px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-header h2 {
+    font-size: 30px;
+  }
+}
 </style>
 </head>
 
@@ -835,7 +1023,9 @@ footer h4 {
             Produtos cerâmicos para diferentes necessidades
             e etapas da construção.
           </p>
-          <a href="#contato" class="product-link">SOLICITAR INFORMAÇÕES →</a>
+          <a href="#catalogo" class="product-link">
+  VER PRODUTOS →
+</a>
         </div>
       </article>
 
@@ -854,6 +1044,48 @@ footer h4 {
 
     </div>
   </div>
+</section>
+  <section class="catalog" id="catalogo">
+
+  <div class="catalog-header">
+    <span class="section-label">LINHA DE PRODUTOS</span>
+
+    <h2>Encontre o material ideal para sua obra.</h2>
+
+    <p>
+      Conheça nossa linha de produtos cerâmicos,
+      escolha as quantidades e solicite seu orçamento.
+    </p>
+  </div>
+
+  <div class="catalog-grid" id="catalogGrid"></div>
+
+  <div class="cart-box">
+
+    <h3>Seu carrinho</h3>
+
+    <div id="cartItems">
+      <p style="color:#aaa">
+        Seu carrinho está vazio.
+      </p>
+    </div>
+
+    <div class="cart-total">
+      <span>Total estimado:</span>
+      <span id="cartTotal">R$ 0,00</span>
+    </div>
+
+    <button class="finish-order" onclick="finishOrder()">
+      FINALIZAR PEDIDO PELO WHATSAPP →
+    </button>
+
+  </div>
+
+  <p class="demo-notice">
+    * Preços e produtos ilustrativos para demonstração.
+    Valores sujeitos à confirmação pela empresa.
+  </p>
+
 </section>
 
 <!-- DIFFERENTIALS -->
@@ -1007,7 +1239,204 @@ footer h4 {
     <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.4.1 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6a12 12 0 0 0 5.9 1.5h.1c6.6 0 12-5.4 12-12a12 12 0 0 0-3.7-8.4ZM12.1 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12.1 22Zm5.5-7.5c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.3-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.2-.2.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.4s1.1 2.7 1.2 2.9c.1.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
   </svg>
 </a>
+// ===== PRODUTOS CALDENSE =====
 
+const products = [
+  {id:1, name:"Tijolo 10", category:"Tijolo cerâmico", price:1200},
+  {id:2, name:"Tijolo 11", category:"Tijolo cerâmico", price:1350},
+  {id:3, name:"Tijolo 15", category:"Tijolo cerâmico", price:1650},
+  {id:4, name:"Laje", category:"Linha de laje", price:1400},
+  {id:5, name:"Meio tijolo 10", category:"Meio tijolo", price:850},
+  {id:6, name:"Meio tijolo 11", category:"Meio tijolo", price:950},
+  {id:7, name:"Meio tijolo 15", category:"Meio tijolo", price:1100}
+];
+
+let cart = [];
+
+const formatPrice = value =>
+  value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
+// MOSTRAR PRODUTOS
+
+function renderProducts() {
+
+  const grid = document.getElementById("catalogGrid");
+
+  grid.innerHTML = products.map(product => `
+    <div class="catalog-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=700&q=80"
+        alt="${product.name}"
+      >
+
+      <div class="catalog-info">
+
+        <span class="category">${product.category}</span>
+
+        <h3>${product.name}</h3>
+
+        <p>Produto cerâmico para sua construção.</p>
+
+        <div class="catalog-price">
+          ${formatPrice(product.price)}
+          <small>/ milheiro</small>
+        </div>
+
+        <div class="quantity">
+          <label>Quantidade:</label>
+
+          <input
+            type="number"
+            id="qty-${product.id}"
+            value="1"
+            min="1"
+            step="1"
+          >
+        </div>
+
+        <button
+          class="add-cart"
+          onclick="addToCart(${product.id})"
+        >
+          ADICIONAR AO CARRINHO
+        </button>
+
+      </div>
+    </div>
+  `).join("");
+}
+
+// ADICIONAR AO CARRINHO
+
+function addToCart(id) {
+
+  const product = products.find(p => p.id === id);
+
+  const quantity = Number(
+    document.getElementById(`qty-${id}`).value
+  );
+
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    alert("Informe uma quantidade válida.");
+    return;
+  }
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity += quantity;
+  } else {
+    cart.push({
+      ...product,
+      quantity
+    });
+  }
+
+  renderCart();
+}
+
+// ATUALIZAR CARRINHO
+
+function renderCart() {
+
+  const items = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+
+    items.innerHTML = `
+      <p style="color:#aaa">
+        Seu carrinho está vazio.
+      </p>
+    `;
+
+  } else {
+
+    items.innerHTML = cart.map(item => `
+      <div class="cart-item">
+
+        <span>
+          ${item.name} — ${item.quantity} milheiro(s)
+        </span>
+
+        <strong>
+          ${formatPrice(item.price * item.quantity)}
+        </strong>
+
+        <button
+          class="remove-item"
+          onclick="removeItem(${item.id})"
+        >×</button>
+
+      </div>
+    `).join("");
+
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  document.getElementById("cartTotal").textContent =
+    formatPrice(total);
+}
+
+// REMOVER PRODUTO
+
+function removeItem(id) {
+
+  cart = cart.filter(item => item.id !== id);
+
+  renderCart();
+}
+
+// FINALIZAR PELO WHATSAPP
+
+function finishOrder() {
+
+  if (cart.length === 0) {
+    alert("Adicione produtos ao carrinho primeiro.");
+    return;
+  }
+
+  // SUBSTITUIR PELO WHATSAPP REAL DA CERÂMICA
+  const phone = "5533999999999";
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  let message =
+    "Olá! Gostaria de solicitar um orçamento na Cerâmica Caldense:\n\n";
+
+  cart.forEach(item => {
+
+    message +=
+      `• ${item.name}\n` +
+      `Quantidade: ${item.quantity} milheiro(s)\n` +
+      `Valor estimado: ${formatPrice(item.price * item.quantity)}\n\n`;
+
+  });
+
+  message += `Total estimado: ${formatPrice(total)}\n\n`;
+
+  message +=
+    "Gostaria de confirmar disponibilidade, frete e condições de pagamento.";
+
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+}
+
+// INICIAR LOJA
+
+renderProducts();
 <script>
 function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('active');
